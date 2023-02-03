@@ -5,11 +5,10 @@ import { bindActionCreators } from "redux";
 import { fetchUser } from "./Redux/actions";
 import Feed from "../main/Feed";
 import Profile from "../main/Profile";
-
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const EmptyScreen = () => {
   return null;
@@ -21,7 +20,7 @@ class Main extends Component {
   }
   render() {
     return (
-      <Tab.Navigator initialTabNavigator="Feed">
+      <Tab.Navigator initialTabNavigator="Feed" labeled={false}>
         <Tab.Screen
           name="Feed"
           component={Feed}
